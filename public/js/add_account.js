@@ -1,5 +1,29 @@
 let json_accounts = [];
-							
+
+
+try{
+	let tmp_accounts = JSON.parse(localStorage.getItem("json_accounts"));
+
+	tmp_accounts.map((account)=>{
+		console.log(account);
+		json_accounts.push(account);
+	});
+	/*for(let i=0;i<tmp_accounts.length;i++){
+		let account = {
+			name: tmp_accounts[i].name,
+			email: tmp_accounts[i].email,
+			username: tmp_accounts[i].username,
+			password: tmp_accounts[i].password,
+			confirm: tmp_accounts[i].confirm			
+		}
+		json_accounts.push(account);
+	}*/
+}
+catch(TypeError){
+	localStorage.setItem('json_accounts',JSON.stringify(json_accounts));
+}
+
+
 function createUser(){
 
 	let name = document.querySelector('#name').value;
@@ -16,18 +40,19 @@ function createUser(){
 	}
 	json_accounts.push(newAccount);
 
-	console.log(json_accounts);
-	let jns = JSON.stringify(json_accounts);
-	localStorage.setItem('json_accounts',jns);
 
-	let jns_retrieve = localStorage.getItem('json_accounts');
-	console.log(jns_retrieve);
 
-	let jns_parse = JSON.parse(localStorage.getItem('json_accounts'));
-	console.log(jns_parse);
+	// console.log(json_accounts);
+	localStorage.setItem('json_accounts',JSON.stringify(json_accounts));
 
-	//Display in console inside of json array
-	console.log("Name is " + jns_parse[0].name);
-	console.log("Email is " + jns_parse[0].email);
+	// let jns_retrieve = localStorage.getItem('json_accounts');
+	// console.log(jns_retrieve);
+
+	// let jns_parse = JSON.parse(localStorage.getItem('json_accounts'));
+	// console.log(jns_parse);
+
+	// //Display in console inside of json array
+	// console.log("Name is " + jns_parse[0].name);
+	// console.log("Email is " + jns_parse[0].email);
 
 }

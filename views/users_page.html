@@ -23,7 +23,7 @@
 			<table class="table table-inverse">
 			  <thead>
 			    <tr>
-			      <th>#</th>
+			      <th>Profile Picture</th>
 			      <th>First Name</th>
 			      <th>Last Name</th>
 			      <th>Username</th>
@@ -56,8 +56,6 @@
 			</div>
 		</div>
 		<script>
-			    	let jns_retrieve = localStorage.getItem('json_accounts');
-					console.log(jns_retrieve);
 					let jns_parse = JSON.parse(localStorage.getItem('json_accounts'));
 					console.log(jns_parse);
 
@@ -66,7 +64,7 @@
 			
 					html += `
 					<tr>
-			      		<th scope="row">1</th>
+			      		<td><img src="http://lorempixel.com/100/100/people/"/> </td>
 			      		<td>${name.name}</td>
 			      		<td>${name.email}</td>
 			      		<td>${name.username}</td>

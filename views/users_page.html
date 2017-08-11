@@ -31,7 +31,7 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
+			    <!-- <tr>
 			      <th scope="row">1</th>
 			      <td><a href="/mark">Mark</a></td>
 			      <td>Otto</td>
@@ -48,7 +48,26 @@
 			      <td><a href="/larry">Larry</a></td>
 			      <td>the Bird</td>
 			      <td>@theLegend</td>
-			    </tr>
+			    </tr> -->
+			    <script>
+			    	let jns_retrieve = localStorage.getItem('json_names');
+					console.log(jns_retrieve);
+					let jns_parse = JSON.parse(localStorage.getItem('json_names'));
+					console.log(jns_parse);
+
+					let html=``;
+					jns_parse.map((name)=>{
+			
+					html += `
+					<tr>
+			      		<th scope="row">1</th>
+			      		<td>${name.name}</td>
+			      		<td>${name.email}</td>
+			      		<td>${name.username}</td>
+			    	</tr>
+					`;
+					});
+				</script>
 			  </tbody>
 			</table>
 			<div class="form-group ">

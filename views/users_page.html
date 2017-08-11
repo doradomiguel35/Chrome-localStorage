@@ -29,7 +29,7 @@
 			      <th>Username</th>
 			    </tr>
 			  </thead>
-			  <tbody>
+			  <tbody id="tblNames">
 			    <!-- <tr>
 			      <th scope="row">1</th>
 			      <td><a href="/mark">Mark</a></td>
@@ -48,10 +48,17 @@
 			      <td>the Bird</td>
 			      <td>@theLegend</td>
 			    </tr> -->
-			    <script>
-			    	let jns_retrieve = localStorage.getItem('json_names');
+			    
+			  </tbody id = "tblNames">
+			</table>
+			<div class="form-group ">
+					<a href="/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Log Out</a>
+			</div>
+		</div>
+		<script>
+			    	let jns_retrieve = localStorage.getItem('json_accounts');
 					console.log(jns_retrieve);
-					let jns_parse = JSON.parse(localStorage.getItem('json_names'));
+					let jns_parse = JSON.parse(localStorage.getItem('json_accounts'));
 					console.log(jns_parse);
 
 					let html=``;
@@ -66,13 +73,9 @@
 			    	</tr>
 					`;
 					});
-				</script>
-			  </tbody>
-			</table>
-			<div class="form-group ">
-					<a href="/" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Log Out</a>
-			</div>
-		</div>
+					document.querySelector('#tblNames').innerHTML = html;
+		</script>
+		
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

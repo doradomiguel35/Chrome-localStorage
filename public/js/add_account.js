@@ -1,6 +1,6 @@
 let json_accounts = [];
 							
-function addAccount(){
+function createUser(){
 
 	let name = document.querySelector('#name').value;
 	let email = document.querySelector('#email').value;

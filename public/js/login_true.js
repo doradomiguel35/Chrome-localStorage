@@ -18,19 +18,29 @@ function isLogin(){
 		// 	alert("Error");
 			
 		// });
-		for(var i = 0; i < account.length; i++){
-  			if(account[i].username == input_username && account[i].password == input_password){
-    			console.log(account[i].username);
-    			console.log(account[i].password);
-    			window.open("/users");
-    			break;
-			}
+		try{
+			for(var i = 0; i < account.length; i++){
+				if(account == null){
+					alert("Invalid Username or Password");
+				}
+	  			
+	  			else if(account[i].username == input_username && account[i].password == input_password){
+	    			console.log(account[i].username);
+	    			console.log(account[i].password);
+	    			window.open("/users");
+	    			break;
+				}
 
-			else{
-				alert("Invalid Username or Password");
-				break;
+				else{
+					alert("Invalid Username or Password");
+					break;
+				}
+	  			
 			}
-  			
+		}
+
+		catch(TypeError){
+			alert("Invalid Username or Password");
 		}
 		
 }
